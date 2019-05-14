@@ -136,3 +136,5 @@ In order to hear the audio being sent out by the patch, the DSP box in the comma
 
 _Figure 10: Print-screen image of the pure data command needed to automatically turn the DSP when the patch is opened_
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/DSP.png "DSP control")
+# Demonstration
+An explanation and demonstration of _AMINA_ has been created and can be found by following this link: https://youtu.be/7wf1yl4Ea4s
