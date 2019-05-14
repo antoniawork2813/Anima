@@ -1,7 +1,7 @@
 # ANIMA
-This README file is going to take you through all the steps needed in order to create your own version of the plant-based synthesiser project, ANIMA
+This README file is going to take you through all the steps needed in order to create your own version of the plant-based synthesiser project, _ANIMA_
 ## Step 1 - All the right tools
-Before advancing any further with this project, it is important that you have all the tools you will need to successfully create your own working version of Anima. You will need the following items before you go any further:
+Before advancing any further with this project, it is important that you have all the tools you will need to successfully create your own working version of _ANIMA_. You will need the following items before you go any further:
 - 1x Arduino board
 - 1x Breadboard
 - 1x Capacitive sensor
@@ -11,20 +11,20 @@ Before advancing any further with this project, it is important that you have al
 - 1x USB Printer cable with A to B ends
 - Arduino software, which can be downloaded here: https://www.arduino.cc/en/Main/Software
 - Pure data software, which can be downloaded here: https://puredata.info/downloads
--- Please note the version of Pure Data used in ANIMA is pd Vanilla, however, when using vanilla you may have to install some externals in order to get the patch to run correctly. A guide to help you figure out how to install externals can be found here: https://puredata.info/docs/faq/how-do-i-install-externals-and-help-files
+-- Please note the version of Pure Data used in _ANIMA_ is pd Vanilla, however, when using vanilla you may have to install some externals in order to get the patch to run correctly. A guide to help you figure out how to install externals can be found here: https://puredata.info/docs/faq/how-do-i-install-externals-and-help-files
 ## Step 2 - Setting up the Arduino
 The arduino board should be set up as shown in figure 1, figure 2 and figure 3. There are no charged ends within this circuit so the send and receive cable can run in either position (https://www.youtube.com/watch?v=stejKa03tdw). The purpose of the capacitive sensor pad is to pick up any changes in the electric potential within the plants leaf (https://www.bareconductive.com/make/what-is-capacitive-sensing/), however any conductive object can be used in place of these pads (e.g. conductive paste, crocodile clip, etc.)
 
-Figure 1: Image showing how the Arduino board and breadboard should look in your own version of ANIMA
+Figure 1: Image showing how the Arduino board and breadboard should look in your own version of _ANIMA_
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224538.jpg "Arduino and breadboard")
 
 Figure 2: Image showing the way in which the jumper cables were added to the Arduino board in order to carry a signal from the capacitive sensor.
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224559.jpg "Arduino close-up")
 
-Figure 3: Image showing how the breadboard should look when creating your own version of ANIMA. _Remember: There are no charged ends within this circuit, so this is just an example of how you can set it up, if yours differs slightly, it shouldn't have any effect on the data your circuit collects_.
+Figure 3: Image showing how the breadboard should look when creating your own version of _ANIMA_. _Remember: There are no charged ends within this circuit, so this is just an example of how you can set it up, if yours differs slightly, it shouldn't have any effect on the data your circuit collects_.
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224614.jpg "Breadboard close-up")
 
-Figure 4: A print-screen showing the circuit diagram that was used as a guide when putting the hardware components of ANIMA together. 
+Figure 4: A print-screen showing the circuit diagram that was used as a guide when putting the hardware components of _ANIMA_ together. 
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/circuit.png "Anima circuit")
 ### Step 2a
 a.	After you have set your board up correctly and the arduino software has been installed on your computer, please install the following code:
@@ -53,7 +53,7 @@ void loop()
     delay(1000);                             // arbitrary delay to limit data to serial port 
 }
 ```
-As I wasn’t particularly familiar with Arduino or the coding language its software uses, I thought the best option to create an effective working demo of Anima, would be to use the code created by https://www.youtube.com/watch?v=stejKa03tdw. I knew it worked and served the exact purpose that was needed for my computer to be able to read the data being picked up by the Arduino.
+As I wasn’t particularly familiar with Arduino or the coding language its software uses, I thought the best option to create an effective working demo of _ANIMA_, would be to use the code created by https://www.youtube.com/watch?v=stejKa03tdw. I knew it worked and served the exact purpose that was needed for my computer to be able to read the data being picked up by the Arduino.
 - It should be mentioned that for the code above to work effectively, you will need to install the CapSense library into your computational device. The CapSense library can be found by following this link: https://playground.arduino.cc/Main/CapacitiveSensor/.
 - Once the file has been downloaded and unzipped it needs to be installed in Arduino/hardware/libraries/ (https://playground.arduino.cc/Main/CapacitiveSensor/). _The Arduino file should be located where your operating system stores its program files_.
 
@@ -69,7 +69,7 @@ In order to test that the system is functioning correctly, attach a [print] obje
 
 **Serial Print was suggested as a useful and quick method of getting Arduino and Pure Data to communicate with each other. It would probably have been possible to achieve communication without the use of serial print but, once again, as I was not greatly familiar with Arduino, doing that may have proven to be a long and time consuming task that may have affected quality of the end product of this project. As I have frequently found with coding, most things that you could potentially need for a project have already been made by someone else. It can often be save a lot of time by using their code as a reference and perhaps making slight adjustments to better suit your own work.**
 ### Step 3b
-As the data, from the Arduino board, comes into pure data, the desired numeric value is going to be prefixed by another number (typically 1, 2 and occasionally 3). This other number is not integral to ANIMA and can interfere with the rest of the patch. In order to get pure data to ignore this value an [unpack f f] object needs to be connected to the left outlet of the [serial_print any] object. The [unpack f f] object separates the numerical values and stores them as floats. The first float will be output from the left outlet of the object and the second float, (the one that we need for this project), will be output from the right outlet. A number box can be added to that right outlet, just to ensure the right number is being output.
+As the data, from the Arduino board, comes into pure data, the desired numeric value is going to be prefixed by another number (typically 1, 2 and occasionally 3). This other number is not integral to _ANIMA_ and can interfere with the rest of the patch. In order to get pure data to ignore this value an [unpack f f] object needs to be connected to the left outlet of the [serial_print any] object. The [unpack f f] object separates the numerical values and stores them as floats. The first float will be output from the left outlet of the object and the second float, (the one that we need for this project), will be output from the right outlet. A number box can be added to that right outlet, just to ensure the right number is being output.
 ## Step 4 - Gestural control
 ### Step 4a - [moses] objects
 An object named [moses 30] is attached to the outlet of the number box mentioned in **Step 3b**. Moses objects will compare incoming numbers to the control value specified, (in this case it would be 30). It then outputs the numbers from the left outlet if they are less than the control value and output the numbers from the right outlet if they’re greater than or equal to the control value.
@@ -80,8 +80,8 @@ Every [moses] object has a number box attached to the left outlet. This allows f
 _Figure 5: Print-screen demonstrating how the [moses] objects have been utilised in this first section of the patch entitled Guitar_specdelay~-main_
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/%5Bmoses%5D.png "[moses] chain 1")
 
-**The number of [moses] objects may seem excessive; however, it was necessary in order to give ANIMA the ability to control the sound via gestural actions. By including this many [moses] objects with increasing control values, the patch is able to detect how close a person is to the plant and how long they physically interact with the plant. 
-The gestural control is one of the key elements of ANIMA as it gives participants the opportunity to hear how quickly the plant reacts to their presence and to their touch, further proving and helping them understand that plants have some level of intelligence and are highly aware and responsive to their surroundings.**
+**The number of [moses] objects may seem excessive; however, it was necessary in order to give _ANIMA_ the ability to control the sound via gestural actions. By including this many [moses] objects with increasing control values, the patch is able to detect how close a person is to the plant and how long they physically interact with the plant. 
+The gestural control is one of the key elements of _ANIMA_ as it gives participants the opportunity to hear how quickly the plant reacts to their presence and to their touch, further proving and helping them understand that plants have some level of intelligence and are highly aware and responsive to their surroundings.**
 
 There are 63 [moses] objects in the patch, which have all been sorted into groups of 3. The bang objects, attached to the number boxes of each individual [moses] object, are then attached to a [random] object. [random] objects output random integer values between 0 and the given control value.
 _For example, the first [moses] object in the chain is connected to a [random 30] object, the control value in this instance is 30, so the object being output by this object will be between 0 and 30_. 
