@@ -109,17 +109,25 @@ b.	The second [inlet] object is attached to the same 0 message box, as the [load
 **Each sub-patch is setup in the same way, the only thing that differs between each of them is the sample that is loaded into the patch. All the audio samples used in _ANIMA_ can be found in the folder named _CapacitiveSensorSketch_**.
 ## Step 6 - Adding effects
 As the audio signal leaves the sub-patches, (from both the left and right outlets), it is then directed into two amplifiers ([*~ 1]*). The left outlet is attached to the left [*~ 1]* and the right outlet is attached to the right [*~ 1]*. These objects increase the output of the signal being sent through the system (_see figure 8_).
-
-_Figure 8:_
-
 ### Step 6a - [freeverb~]
 Each [*~ 1]* object is attached to the left and right inlet, respectively, of a [freeverb~] object (_see figure 8_). [freeverb~] is a stereo reverb unit within pure data. This was added to the signal to give it some ambience and make it more interesting to listen to. Attached to the right inlet of the [freeverb~] object are three variable commands; wet, dry and roomsize. In the _figure 9_ you can see each variable is set up in the same way. They have a slider, (that has a range between 0 and 1), which is then attached to the inlet of a message box that features the variable name and a $1 value. This lets the [freeverb~] object know which variable is to be controlled, then the value of the slider replaces the $1 value in the message box.
+
+_Figure 8: Print-screen showing the [freeverb~] object and its variable controls_
+![alt text](https://github.com/antoniawork2813/Anima/blob/master/%5Bfreeverb%5D.png "[freeverb~]")
+
 ### Step 6b - Guitar Specdelay~
-The signal then travels from the left and right outlet of the [freeverb~] object and into an abstract named Guitar_specdelay~. This abstract was originally part of a file downloaded from: https://guitarextended.wordpress.com/2012/02/07/spectral-delay-effect-for-guitar-with-pure-data/. 
+The signal then travels from the left and right outlet of the [freeverb~] object and into an abstract named Guitar_specdelay~ (_see figure 9_). This abstract was originally part of a file downloaded from: https://guitarextended.wordpress.com/2012/02/07/spectral-delay-effect-for-guitar-with-pure-data/. 
 Spectral delay pd patch was originally intended to be used as an effect for a guitar, however, it has been repurposed to be used in Anima. The patch adds reverb as well as a chorus-type delay effect that repeats and distributes the harmonics of the incoming signal all over the frequency spectrum (https://guitarextended.wordpress.com/2012/02/07/spectral-delay-effect-for-guitar-with-pure-data/.). This creates an interesting ambient effect that can be added on top of the already existing [freeverb~] object to make the samples being triggered sound even more atmospheric and ambient and a more interesting for the participant to listen to.
+
+_Figure 9: Print-screen showing the Guitar_specdelay abstract that was used to add ambience to the samples being triggered_
+![alt text](https://github.com/antoniawork2813/Anima/blob/master/Guitar_specdelay~.png "Guitar_specdelay~")
+
 ## Step 7 - Output
 The output of the Guitar_specdelay~, is then connected to two [*~]* objects, one that represents the left stereo input and one that represents the right stereo input. These act as amplifiers, giving the signal a final boost. The value that this signal will be amplified by is determined by the slider connected to the left input of each command box. These values will be between 0 and 0.5 as that is the range of the slider. 
-Finally, the left and right amplifiers ([*~]*) are attached to the left and right input of a [dac~1 2] object. The 1 and 2 in the object box specifies that this signal should be in stereo.
+Finally, the left and right amplifiers ([*~]*) are attached to the left and right input of a [dac~1 2] object. The 1 and 2 in the object box specifies that this signal should be in stereo (_see figure 9_).
 
 ## Bonus Step
-In order to hear the audio being sent out by the patch, the DSP box in the command window of Pure Data will have to be switched on, which can be done manually. However, if you wish for this to automatically switch on when you open the patch then you should include the following in you patch (see figure WHATEVER)
+In order to hear the audio being sent out by the patch, the DSP box in the command window of Pure Data will have to be switched on, which can be done manually. However, if you wish for this to automatically switch on when you open the patch then you should include the following in you patch (_see figure 10_)
+
+_Figure 10: Print-screen image of the pure data command needed to automatically turn the DSP when the patch is opened_
+![alt text](https://github.com/antoniawork2813/Anima/blob/master/DSP.png "DSP control")
