@@ -4,7 +4,7 @@ This README file is going to take you through all the steps needed in order to c
 Before advancing any further with this project, it is important that you have all the tools you will need to successfully create your own working version of _ANIMA_. You will need the following items before you go any further:
 - 1x Arduino board
 - 1x Breadboard
-- 1x Capacitive sensor
+- 1x Capacitive sensor (_You may have to srip back the plastic covering on the end of wire, in order to expose the metal beneath. You should then be able to attach the jumper cable using any form of non-conductive cohesive. **Make sure the cohesive does not stop the two wires from physically connecting with each other**_) 
 - 3x Male to male solderless breadboard jumper cables
 - 1x 1MΩ Resistor
 - 1x Plant (preferrably one that has leaves with a relatively large surface area)
