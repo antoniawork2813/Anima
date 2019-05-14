@@ -71,6 +71,7 @@ In order to test that the system is functioning correctly, attach a [print] obje
 ### Step 3b
 As the data, from the Arduino board, comes into pure data, the desired numeric value is going to be prefixed by another number (typically 1, 2 and occasionally 3). This other number is not integral to ANIMA and can interfere with the rest of the patch. In order to get pure data to ignore this value an [unpack f f] object needs to be connected to the left outlet of the [serial_print any] object. The [unpack f f] object separates the numerical values and stores them as floats. The first float will be output from the left outlet of the object and the second float, (the one that we need for this project), will be output from the right outlet. A number box can be added to that right outlet, just to ensure the right number is being output.
 ## Step 4 - Gestural control
+### Step 4a - [moses] objects
 An object named [moses 30] is attached to the outlet of the number box mentioned in **Step 3b**. Moses objects will compare incoming numbers to the control value specified, (in this case it would be 30). It then outputs the numbers from the left outlet if they are less than the control value and output the numbers from the right outlet if they’re greater than or equal to the control value.
 The [moses] object was particularly useful as it allowed for the easy control of high volumes of random data coming in through the Arduino board, this data could then be easily directed to its intended location. 
 In _figure 5_ located below, you can see that there are many [moses] objects attached to each other. These objects are attached via the right outlet to the left input. This means that as a value that is greater than or equal to the previous [moses] object comes into the new [moses] object, it will be compared to the control value of that object. This value will be output to the left if it is less than the control value and to the right if it’s greater than the control value. This [moses] object is then connected to another [moses] object and the process repeats until the chain is stopped. 
@@ -78,3 +79,24 @@ Every [moses] object has a number box attached to the left outlet. This allows f
 
 _Figure 5: Print-screen demonstrating how the [moses] objects have been utilised in this first section of the patch entitled Guitar_specdelay~-main_
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/%5Bmoses%5D.png "[moses] chain 1")
+
+**The number of [moses] objects may seem excessive; however, it was necessary in order to give ANIMA the ability to control the sound via gestural actions. By including this many [moses] objects with increasing control values, the patch is able to detect how close a person is to the plant and how long they physically interact with the plant. 
+The gestural control is one of the key elements of ANIMA as it gives participants the opportunity to hear how quickly the plant reacts to their presence and to their touch, further proving and helping them understand that plants have some level of intelligence and are highly aware and responsive to their surroundings.**
+
+There are 63 [moses] objects in the patch, which have all been sorted into groups of 3. The bang objects, attached to the number boxes of each individual [moses] object, are then attached to a [random] object. [random] objects output random integer values between 0 and the given control value.
+_For example, the first [moses] object in the chain is connected to a [random 30] object, the control value in this instance is 30, so the object being output by this object will be between 0 and 30_. 
+
+### Step 4b - [random] objects
+Seven [random] objects have been used, as can be seen in _figure 6_. The purpose of these [random] objects is to randomly output an integer, (within the specified range), that will then trigger another set of [moses] objects. 
+This second set of [moses] objects have been separated into 7 groups of 2 and each [random] object is connected to one of those groups of 2 (_see figure 6_). As the [random] object outputs an integer it will enter the [moses] chain and trigger one of the objects, depending on the value that has been output and the specified range of each [moses] object. 
+A bang object has been added to the left outlet of each of these [moses] objects, as can be seen in _figure 6_. These bang objects have then been attached to the left input of 1 of 7 sub-patches in pd. This means that as the value output from the [random] object, triggers one of the [moses] objects in its chain (and subsequently the bang attached to the left output), it will trigger the content of the sub-patch it is attached to the left inlet of. 
+
+_Figure 6:_
+
+## Step 5 - Triggering samples
+When you open one of these sub-patches it should look like the one shown in _figure 7_. The content of these patches were based on the sampler patch created by cheetomoskeeto in a YouTube video, which can be found here: https://www.youtube.com/watch?v=boX0v54SqtU. If you follow the link you will find a full tutorial an explanation for each individual element within this sub-patch.  
+
+_Figure 7:_
+
+**The audio samples that have been used for these patches can be found in the zip file named _ANIMA_. The reason that samples have been used, instead of the oscillators available in Pure Data, is because this patch was designed to sound as musical as possible and be somewhat ‘pleasant’ to listen to. It was felt that randomly triggering different oscillators and varying the frequencies of them, did not accomplish that, and instead created something that sounded too much like the stereotypical sound associated with a computer churning out a lot data (which can be heard in the _pieces for plants_ video { https://vimeo.com/63343503}). Using samples of notes within a musical scale was an easy and effective way of making the patch feel more musical, whilst still retaining the random and unpredictable nature of the data being output by the plant.**
+
