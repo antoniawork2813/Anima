@@ -15,16 +15,16 @@ Before advancing any further with this project, it is important that you have al
 ## Step 2 - Setting up the Arduino
 The arduino board should be set up as shown in figure 1, figure 2 and figure 3. There are no charged ends within this circuit so the send and receive cable can run in either position (https://www.youtube.com/watch?v=stejKa03tdw). The purpose of the capacitive sensor pad is to pick up any changes in the electric potential within the plants leaf (https://www.bareconductive.com/make/what-is-capacitive-sensing/), however any conductive object can be used in place of these pads (e.g. conductive paste, crocodile clip, etc.)
 
-Figure 1: Image showing how the Arduino board and breadboard should look in your own version of _ANIMA_
+_Figure 1: Image showing how the Arduino board and breadboard should look in your own version of _ANIMA_
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224538.jpg "Arduino and breadboard")
 
-Figure 2: Image showing the way in which the jumper cables were added to the Arduino board in order to carry a signal from the capacitive sensor.
+_Figure 2: Image showing the way in which the jumper cables were added to the Arduino board in order to carry a signal from the capacitive sensor._
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224559.jpg "Arduino close-up")
 
-Figure 3: Image showing how the breadboard should look when creating your own version of _ANIMA_. _Remember: There are no charged ends within this circuit, so this is just an example of how you can set it up, if yours differs slightly, it shouldn't have any effect on the data your circuit collects_.
+_Figure 3: Image showing how the breadboard should look when creating your own version of _ANIMA_. _Remember: There are no charged ends within this circuit, so this is just an example of how you can set it up, if yours differs slightly, it shouldn't have any effect on the data your circuit collects_.
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224614.jpg "Breadboard close-up")
 
-Figure 4: A print-screen showing the circuit diagram that was used as a guide when putting the hardware components of _ANIMA_ together. 
+_Figure 4: A print-screen showing the circuit diagram that was used as a guide when putting the hardware components of _ANIMA_ together_. 
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/circuit.png "Anima circuit")
 ### Step 2a
 a.	After you have set your board up correctly and the arduino software has been installed on your computer, please install the following code:
@@ -91,12 +91,15 @@ Seven [random] objects have been used, as can be seen in _figure 6_. The purpose
 This second set of [moses] objects have been separated into 7 groups of 2 and each [random] object is connected to one of those groups of 2 (_see figure 6_). As the [random] object outputs an integer it will enter the [moses] chain and trigger one of the objects, depending on the value that has been output and the specified range of each [moses] object. 
 A bang object has been added to the left outlet of each of these [moses] objects, as can be seen in _figure 6_. These bang objects have then been attached to the left input of 1 of 7 sub-patches in pd. This means that as the value output from the [random] object, triggers one of the [moses] objects in its chain (and subsequently the bang attached to the left output), it will trigger the content of the sub-patch it is attached to the left inlet of. 
 
-_Figure 6:_
+_Figure 6: A print-screen showing how the [random] and [moses] objects are connected in order to randomly select and trigger different samples within the patch_
+![alt text](https://github.com/antoniawork2813/Anima/blob/master/%5Bmoses%5D2.png "[moses]2")
+
 
 ## Step 5 - Creating a sampler
 When you open one of these sub-patches it should look like the one shown in _figure 7_. The content of these patches were based on the sampler patch created by cheetomoskeeto in a YouTube video, which can be found here: https://www.youtube.com/watch?v=boX0v54SqtU. If you follow the link you will find a full tutorial an explanation for each individual element within this sub-patch.  
 
-_Figure 7:_
+_Figure 7: A print-screen image showing how the sampler in each subpatch should be set-up. The only feature that should differ between each sub-patch is the sample that is used and therefore the playback speed of that sample as well_
+![alt text](https://github.com/antoniawork2813/Anima/blob/master/Sub-patch.png "Sub-patch sampler")
 
 **The audio samples that have been used for these patches can be found in the zip file named _ANIMA_. The reason that samples have been used, instead of the oscillators available in Pure Data, is because this patch was designed to sound as musical as possible and be somewhat ‘pleasant’ to listen to. It was felt that randomly triggering different oscillators and varying the frequencies of them, did not accomplish that, and instead created something that sounded too much like the stereotypical sound associated with a computer churning out a lot data (which can be heard in the _pieces for plants_ video { https://vimeo.com/63343503}). Using samples of notes within a musical scale was an easy and effective way of making the patch feel more musical, whilst still retaining the random and unpredictable nature of the data being output by the plant.**
 
