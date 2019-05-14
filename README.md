@@ -13,7 +13,7 @@ Before advancing any further with this project, it is important that you have al
 - Pure data software, which can be downloaded here: https://puredata.info/downloads
 -- Please note the version of Pure Data used in _ANIMA_ is pd Vanilla, however, when using vanilla you may have to install some externals in order to get the patch to run correctly. A guide to help you figure out how to install externals can be found here: https://puredata.info/docs/faq/how-do-i-install-externals-and-help-files
 
-**You should find a folder named _Setting up your circuit_ in this repository. In that folder you should find images of each item you will need to build your circuit, as well as diagrams illustrating how to physically set it up**
+**You should find two folders in this repository named _Setting up your circuit - Steps_ and _Setting up your circuit - Equipment_. In _Setting up your circuit - Equipment_ you should find images of each item you will need to build your circuit. In _Setting up your circuit - Steps_ you should find images illustrating how to physically set the circuit up**
 ## Step 2 - Setting up the Arduino
 The arduino board should be set up as shown in figure 1, figure 2 and figure 3. There are no charged ends within this circuit so the send and receive cable can run in either position (https://www.youtube.com/watch?v=stejKa03tdw). The purpose of the capacitive sensor pad is to pick up any changes in the electric potential within the plants leaf (https://www.bareconductive.com/make/what-is-capacitive-sensing/), however any conductive object can be used in place of these pads (e.g. conductive paste, crocodile clip, etc.)
 
