@@ -29,7 +29,7 @@ _Figure 3: Image showing how the breadboard should look when creating your own v
 _Figure 4: A print-screen showing the circuit diagram that was used as a guide when putting the hardware components of _ANIMA_ together_. 
 
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/circuit.png "Anima circuit")
-### Step 2a
+### Step 2a - Using the software
 After you have set your board up correctly and the arduino software has been installed on your computer, please install the following code:
     
 ```
@@ -67,11 +67,11 @@ Once the code has been copied into the Arduino editing window, the next step is 
 After the Arduino has been setup and the code uploads to the board, without any error messages, the next task is then getting the Arduino and Pure Data programs to communicate with each other. The best way of doing this is by using the Serial Print patch created by alexdrymonitis. 
 Serial print “facilitate(s) the communication” between Pure Data and Arduino, making it much easier to work across both platforms. The serial print patch can be found here: https://github.com/alexdrymonitis/Arduino_Pd
 _Once the file has been downloaded and unzipped, you will need to keep the pd patch you are using for this project, in the same folder as the unzipped files. Failure to do this may result in the [serial_print] object not functioning within your patch._
-### Step 3a
+### Step 3a - Testing the circuit
 In order to test that the system is functioning correctly, attach a [print] object to the left inlet of the [serial_print any] object. You should then be able to see some numbers begin to appear in the pure data command window. These numbers should vary depending on your proximity to the capacitive sensor pad. When you are close or touching it, the numbers should begin to increase and when you let go or move away from the pad the number should decrease.
 
 **Serial Print was suggested as a useful and quick method of getting Arduino and Pure Data to communicate with each other. It would probably have been possible to achieve communication without the use of serial print but, once again, as I was not greatly familiar with Arduino, doing that may have proven to be a long and time consuming task that may have affected quality of the end product of this project. As I have frequently found with coding, most things that you could potentially need for a project have already been made by someone else. It can often be save a lot of time by using their code as a reference and perhaps making slight adjustments to better suit your own work.**
-### Step 3b
+### Step 3b - How to get the desired numerical data
 As the data, from the Arduino board, comes into pure data, the desired numeric value is going to be prefixed by another number (typically 1, 2 and occasionally 3). This other number is not integral to _ANIMA_ and can interfere with the rest of the patch. In order to get pure data to ignore this value an [unpack f f] object needs to be connected to the left outlet of the [serial_print any] object. The [unpack f f] object separates the numerical values and stores them as floats. The first float will be output from the left outlet of the object and the second float, (the one that we need for this project), will be output from the right outlet. A number box can be added to that right outlet, just to ensure the right number is being output.
 ## Step 4 - Gestural control
 ### Step 4a - [moses] objects
