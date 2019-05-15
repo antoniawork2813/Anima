@@ -133,7 +133,7 @@ The output of the Guitar_specdelay~, is then connected to two [*~]* objects, one
 Finally, the left and right amplifiers ([*~]*) are attached to the left and right input of a [dac~1 2] object. The 1 and 2 in the object box specifies that this signal should be in stereo (_see figure 9_).
 
 ## Bonus Step
-In order to hear the audio being sent out by the patch, the DSP box in the command window of Pure Data will have to be switched on, which can be done manually. However, if you wish for this to automatically switch on when you open the patch then you should include the following in you patch (_see figure 10_)
+In order to hear the audio being sent out by the patch, the DSP box in the command window of Pure Data will have to be switched on, which can be done manually. However, if you wish for this to automatically switch on when you open the patch then you should include the following code in your patch (_see figure 10_)
 
 _Figure 10: Print-screen image of the pure data command needed to automatically turn the DSP when the patch is opened_
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/DSP.png "DSP control")
