@@ -17,7 +17,7 @@ Before advancing any further with this project, it is important that you have al
 ## Step 2 - Setting up the Arduino
 The arduino board should be set up as shown in figure 1, figure 2 and figure 3. There are no charged ends within this circuit so the send and receive cable can run in either position (https://www.youtube.com/watch?v=stejKa03tdw). The purpose of the capacitive sensor pad is to pick up any changes in the electric potential within the plants leaf (https://www.bareconductive.com/make/what-is-capacitive-sensing/), however any conductive object can be used in place of these pads (e.g. conductive paste, crocodile clip, etc.)
 
-_Figure 1: Image showing how the Arduino board and breadboard should look in your own version of _ANIMA_
+_Figure 1: Image showing how the Arduino board and breadboard should look in your own version of _ANIMA__
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224538.jpg "Arduino and breadboard")
 
 _Figure 2: Image showing the way in which the jumper cables were added to the Arduino board in order to carry a signal from the capacitive sensor._
