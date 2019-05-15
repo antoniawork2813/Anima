@@ -30,7 +30,7 @@ _Figure 4: A print-screen showing the circuit diagram that was used as a guide w
 
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/circuit.png "Anima circuit")
 ### Step 2a
-a.	After you have set your board up correctly and the arduino software has been installed on your computer, please install the following code:
+After you have set your board up correctly and the arduino software has been installed on your computer, please install the following code:
     
 ```
 #include <CapacitiveSensor.h>
@@ -138,4 +138,4 @@ In order to hear the audio being sent out by the patch, the DSP box in the comma
 _Figure 10: Print-screen image of the pure data command needed to automatically turn the DSP when the patch is opened_
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/DSP.png "DSP control")
 # Demonstration
-An explanation and demonstration of _AMINA_ has been created and can be found by following this link: https://youtu.be/7wf1yl4Ea4s
+An explanation and demonstration of _ANIMA_ has been created and can be found by following this link: https://youtu.be/7wf1yl4Ea4s
