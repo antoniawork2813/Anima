@@ -4,7 +4,7 @@ This README file is going to take you through all the steps needed in order to c
 Before advancing any further with this project, it is important that you have all the tools you will need to successfully create your own working version of _ANIMA_. You will need the following items before you go any further:
 - 1x Arduino board
 - 1x Breadboard
-- 1x Capacitive sensor (_You may have to srip back the plastic covering on the end of wire, in order to expose the metal beneath. You should then be able to attach the jumper cable using any form of non-conductive cohesive. **Make sure the cohesive does not stop the two wires from physically connecting with each other**_) 
+- 1x Electrode Pad (_You may have to srip back the plastic covering on the end of wire, in order to expose the metal beneath. You should then be able to attach the jumper cable using any form of non-conductive cohesive. **Make sure the cohesive does not stop the two wires from physically connecting with each other**_) 
 - 3x Male to male solderless breadboard jumper cables
 - 1x 1MΩ Resistor
 - 1x Plant (preferrably one that has leaves with a relatively large surface area)
@@ -15,12 +15,12 @@ Before advancing any further with this project, it is important that you have al
 
 **You should find two folders in this repository named _Setting up your circuit - Steps_ and _Setting up your circuit - Equipment_. In _Setting up your circuit - Equipment_ you should find images of each item you will need to build your circuit. In _Setting up your circuit - Steps_ you should find images illustrating how to physically set the circuit up**
 ## Step 2 - Setting up the Arduino
-The arduino board should be set up as shown in figure 1, figure 2 and figure 3. There are no charged ends within this circuit so the send and receive cable can run in either position (https://www.youtube.com/watch?v=stejKa03tdw). The purpose of the capacitive sensor pad is to pick up any changes in the electric potential within the plants leaf (https://www.bareconductive.com/make/what-is-capacitive-sensing/), however any conductive object can be used in place of these pads (e.g. conductive paste, crocodile clip, etc.)
+The arduino board should be set up as shown in figure 1, figure 2 and figure 3. There are no charged ends within this circuit so the send and receive cable can run in either position (https://www.youtube.com/watch?v=stejKa03tdw). The purpose of the electrode pad is to pick up any changes in the electric potential within the plants leaf (https://www.bareconductive.com/make/what-is-capacitive-sensing/), however any conductive object can be used in place of these pads (e.g. conductive paste, crocodile clip, etc.)
 
 _Figure 1: Image showing how the Arduino board and breadboard should look in your own version of _ANIMA__
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224538.jpg "Arduino and breadboard")
 
-_Figure 2: Image showing the way in which the jumper cables were added to the Arduino board in order to carry a signal from the capacitive sensor._
+_Figure 2: Image showing the way in which the jumper cables were added to the Arduino board in order to carry a signal from the electrode pad._
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224559.jpg "Arduino close-up")
 
 _Figure 3: Image showing how the breadboard should look when creating your own version of _ANIMA__. _Remember: There are no charged ends within this circuit, so this is just an example of how you can set it up, if yours differs slightly, it shouldn't have any effect on the data your circuit collects_.
@@ -68,7 +68,7 @@ After the Arduino has been setup and the code uploads to the board, without any 
 Serial print “facilitate(s) the communication” between Pure Data and Arduino, making it much easier to work across both platforms. The serial print patch can be found here: https://github.com/alexdrymonitis/Arduino_Pd
 _Once the file has been downloaded and unzipped, you will need to keep the pd patch you are using for this project, in the same folder as the unzipped files. Failure to do this may result in the [serial_print] object not functioning within your patch._
 ### Step 3a - Testing the circuit
-In order to test that the system is functioning correctly, attach a [print] object to the left inlet of the [serial_print any] object. You should then be able to see some numbers begin to appear in the pure data command window. These numbers should vary depending on your proximity to the capacitive sensor pad. When you are close or touching it, the numbers should begin to increase and when you let go or move away from the pad the number should decrease.
+In order to test that the system is functioning correctly, attach a [print] object to the left inlet of the [serial_print any] object. You should then be able to see some numbers begin to appear in the pure data command window. These numbers should vary depending on your proximity to the electrode pad. When you are close or touching it, the numbers should begin to increase and when you let go or move away from the pad the number should decrease.
 
 **Serial Print was suggested as a useful and quick method of getting Arduino and Pure Data to communicate with each other. It would probably have been possible to achieve communication without the use of serial print but, once again, as I was not greatly familiar with Arduino, doing that may have proven to be a long and time consuming task that may have affected quality of the end product of this project. As I have frequently found with coding, most things that you could potentially need for a project have already been made by someone else. It can often be save a lot of time by using their code as a reference and perhaps making slight adjustments to better suit your own work.**
 ### Step 3b - How to get the desired numerical data
