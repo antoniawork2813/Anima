@@ -27,6 +27,7 @@ _Figure 3: Image showing how the breadboard should look when creating your own v
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/IMG_20190512_224614.jpg "Breadboard close-up")
 
 _Figure 4: A print-screen showing the circuit diagram that was used as a guide when putting the hardware components of _ANIMA_ together_. 
+
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/circuit.png "Anima circuit")
 ### Step 2a
 a.	After you have set your board up correctly and the arduino software has been installed on your computer, please install the following code:
