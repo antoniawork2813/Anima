@@ -4,10 +4,10 @@ This README file is going to take you through all the steps needed in order to c
 Before advancing any further with this project, it is important that you have all the tools you will need to successfully create your own working version of _ANIMA_. You will need the following items before you go any further:
 - 1x Arduino board
 - 1x Breadboard
-- 1x Electrode Pad (_You may have to srip back the plastic covering on the end of wire, in order to expose the metal beneath. You should then be able to attach the jumper cable using any form of non-conductive cohesive. **Make sure the cohesive does not stop the two wires from physically connecting with each other**_) 
+- 1x Electrode Pad (_You may have to rip back the plastic covering, on the end of wire, in order to expose the metal beneath. You should then be able to attach the jumper cable using any form of non-conductive cohesive, e.g. sticky tape. **Make sure the cohesive does not stop the two wires from physically connecting with each other**_) 
 - 3x Male to male solderless breadboard jumper cables
 - 1x 1MΩ Resistor
-- 1x Plant (preferrably one that has leaves with a relatively large surface area)
+- 1x Plant (preferably one that has leaves with a relatively large surface area)
 - 1x USB Printer cable with A to B ends
 - Arduino software, which can be downloaded here: https://www.arduino.cc/en/Main/Software
 - Pure data software, which can be downloaded here: https://puredata.info/downloads
@@ -129,7 +129,7 @@ _Figure 9: Print-screen showing the Guitar_specdelay abstract that was used to a
 ![alt text](https://github.com/antoniawork2813/Anima/blob/master/Guitar_specdelay~.png "Guitar_specdelay~")
 
 ## Step 7 - Output
-The output of the Guitar_specdelay~, is then connected to two [*~]* objects, one that represents the left stereo input and one that represents the right stereo input. These act as amplifiers, giving the signal a final boost. The value that this signal will be amplified by is determined by the slider connected to the left input of each command box. These values will be between 0 and 0.5 as that is the range of the slider. 
+The output of the Guitar_specdelay~, is then connected to two [*~]* objects, (one that represents the left stereo input and one that represents the right stereo input). These act as amplifiers, giving the signal a final boost. The value that this signal will be amplified by is determined by the slider connected to the left input of each command box. These values will be between 0 and 0.5 as that is the range of the slider. 
 Finally, the left and right amplifiers ([*~]*) are attached to the left and right input of a [dac~1 2] object. The 1 and 2 in the object box specifies that this signal should be in stereo (_see figure 9_).
 
 ## Bonus Step
