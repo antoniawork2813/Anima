@@ -67,6 +67,8 @@ Once the code has been copied into the Arduino editing window, the next step is 
 **The reason I decided to use an Arduino for this project, as opposed to an already complete unit like the _MIDI sprout_, was primarily to do with cost. The components to make my own plant-based synthesisers were collectively a lot less expensive than pre-made commercial models, such as the _MIDI sprout_, which retails for about $300.**
 
 ## Step 3 - Getting Pure Data and Arduino to communicate with each other
+**The pure data patch, that is discussed in the following steps can be found in the _ANIMA Project_ Zip file located in this repository. It is saved under the name _Guitar_specdelay~- main_. Please open the patch to see exactly what is being discussed in the rest of this document**.
+
 After the Arduino has been setup and the code uploads to the board, without any error messages, the next task is then getting the Arduino and Pure Data programs to communicate with each other. The best way of doing this is by using the Serial Print patch created by alexdrymonitis. 
 Serial print “facilitate(s) the communication” between Pure Data and Arduino, making it much easier to work across both platforms. The serial print patch can be found here: https://github.com/alexdrymonitis/Arduino_Pd
 
